@@ -12,7 +12,7 @@ import CoreData
 class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
     var managedObjectContext: NSManagedObjectContext? = nil
-
+    var layoutCell: TableViewCell!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -98,10 +98,37 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             }
         }
     }
+    
+    var titles = ["Piano Man", "Where, Oh Where Has My Little Dog Gone?", "You Can't Always Get What You Want"]
+    var quotes = ["It's nine o'clock on a Saturday. The regular crowd shuffles in. There's an old man sitting next to me, making love to his tonic and gin. He says, Son can you play me a memory, I'm not really sure how it goes, But it's sad and it's sweet and I knew it complete when I wore a younger man's clothes.",
+        "Oh where, oh where has my little dog gone? Oh where, or where can he be?",
+        "I saw her today at the reception, a glass of wine in her hand."
+    ]
 
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
         let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
-        cell.textLabel.text = object.valueForKey("timeStamp")!.description
+        let tableViewCell = cell as TableViewCell
+        tableViewCell.topLabel.text = titles[indexPath.row % 3]
+        tableViewCell.bottomLabel.text = quotes[indexPath.row % 3]
+        layoutCell.topLabel.preferredMaxLayoutWidth = self.tableView.bounds.size.width;
+        layoutCell.bottomLabel.preferredMaxLayoutWidth = self.tableView.bounds.size.width;
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if layoutCell == nil {
+            layoutCell = tableView.dequeueReusableCellWithIdentifier("Cell") as TableViewCell
+        }
+        
+        //layoutCell.topLabel.sizeToFit()
+        //layoutCell.bottomLabel.sizeToFit()
+        //layoutCell.sizeToFit()
+        configureCell(layoutCell, atIndexPath: indexPath)
+        //layoutCell.bounds = CGRectMake(0.0, 0.0, CGRectGetWidth(tableView.bounds), CGRectGetHeight(layoutCell.bounds))
+        layoutCell.layoutIfNeeded()
+        
+        // Get the height for the cell. Add padding of 1 point for cell separator.
+        let height = layoutCell.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height
+        return height + 1
     }
 
     // MARK: - Fetched results controller
