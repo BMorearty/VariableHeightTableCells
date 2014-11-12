@@ -9,22 +9,26 @@
 import UIKit
 import CoreData
 
-class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+class MasterViewController: UITableViewController {
 
     var managedObjectContext: NSManagedObjectContext? = nil
     var layoutCell: TableViewCell!
 
+    let songs = [
+        [ "Piano Man",
+            "It's nine o'clock on a Saturday. The regular crowd shuffles in. There's an old man sitting next to me, making love to his tonic and gin. He says, Son can you play me a memory, I'm not really sure how it goes, But it's sad and it's sweet and I knew it complete when I wore a younger man's clothes." ],
+        [ "Where, Oh Where Has My Little Dog Gone?",
+            "Oh where, oh where has my little dog gone? Oh where, or where can he be?" ],
+        [ "You Can't Always Get What You Want",
+            "I saw her today at the reception, a glass of wine in her hand." ]
+    ]
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        self.navigationItem.leftBarButtonItem = self.editButtonItem()
-
-        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
-        self.navigationItem.rightBarButtonItem = addButton
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,32 +36,13 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         // Dispose of any resources that can be recreated.
     }
 
-    func insertNewObject(sender: AnyObject) {
-        let context = self.fetchedResultsController.managedObjectContext
-        let entity = self.fetchedResultsController.fetchRequest.entity!
-        let newManagedObject = NSEntityDescription.insertNewObjectForEntityForName(entity.name!, inManagedObjectContext: context) as NSManagedObject
-             
-        // If appropriate, configure the new managed object.
-        // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-        newManagedObject.setValue(NSDate(), forKey: "timeStamp")
-             
-        // Save the context.
-        var error: NSError? = nil
-        if !context.save(&error) {
-            // Replace this implementation with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            //println("Unresolved error \(error), \(error.userInfo)")
-            abort()
-        }
-    }
-
     // MARK: - Segues
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
-            let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
-            (segue.destinationViewController as DetailViewController).detailItem = object
+                let song = songs[indexPath.row]
+                (segue.destinationViewController as DetailViewController).detailItem = song[1]
             }
         }
     }
@@ -65,12 +50,11 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     // MARK: - Table View
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return self.fetchedResultsController.sections?.count ?? 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let sectionInfo = self.fetchedResultsController.sections![section] as NSFetchedResultsSectionInfo
-        return sectionInfo.numberOfObjects
+        return songs.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -81,138 +65,52 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
-    }
-
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            let context = self.fetchedResultsController.managedObjectContext
-            context.deleteObject(self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject)
-                
-            var error: NSError? = nil
-            if !context.save(&error) {
-                // Replace this implementation with code to handle the error appropriately.
-                // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                //println("Unresolved error \(error), \(error.userInfo)")
-                abort()
-            }
-        }
+        return false
     }
     
-    var titles = ["Piano Man", "Where, Oh Where Has My Little Dog Gone?", "You Can't Always Get What You Want"]
-    var quotes = ["It's nine o'clock on a Saturday. The regular crowd shuffles in. There's an old man sitting next to me, making love to his tonic and gin. He says, Son can you play me a memory, I'm not really sure how it goes, But it's sad and it's sweet and I knew it complete when I wore a younger man's clothes.",
-        "Oh where, oh where has my little dog gone? Oh where, or where can he be?",
-        "I saw her today at the reception, a glass of wine in her hand."
-    ]
-
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
-        let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
         let tableViewCell = cell as TableViewCell
-        tableViewCell.topLabel.text = titles[indexPath.row % 3]
-        tableViewCell.bottomLabel.text = quotes[indexPath.row % 3]
+        tableViewCell.topLabel.text = songs[indexPath.row % 3][0]
+        tableViewCell.bottomLabel.text = songs[indexPath.row % 3][1]
         layoutCell.topLabel.preferredMaxLayoutWidth = self.tableView.bounds.size.width;
         layoutCell.bottomLabel.preferredMaxLayoutWidth = self.tableView.bounds.size.width;
     }
     
+    // THIS IS THE FUNCTION WHERE I CALCULATE THE HEIGHT.
+    //
+    // It doesn't work consistently. If you run the app, you will see that some lyrics are fully shown
+    // but others are too short vertically, and don't show the last line.  
+    //
+    // (The fact that the song TITLES have ellipses is not a problem. I did that on purpose. It's the 
+    // second label, with word wrap, that is misbehaving.)
+    //
+    // I made sure to set up all the constraints in Main.storyboard, and there are no constraint-related
+    // errors in the log when I run this.
+    //
+    // I based this on suggestions I found in these places:
+    //   http://youtu.be/6KImie4ZMwk
+    //   The comment from Avnish Gaur on the above video, about setting preferredMaxLayoutWidth.
+    //   http://derpturkey.com/autosize-uitableviewcell-height-programmatically/
+    //   http://stackoverflow.com/questions/18746929/using-auto-layout-in-uitableview-for-dynamic-cell-layouts-variable-row-heights
+    // ... and lots more that I don't remember.
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if layoutCell == nil {
             layoutCell = tableView.dequeueReusableCellWithIdentifier("Cell") as TableViewCell
         }
         
+        // I also tried the following fixes, but none of them helped:
         //layoutCell.topLabel.sizeToFit()
         //layoutCell.bottomLabel.sizeToFit()
         //layoutCell.sizeToFit()
-        configureCell(layoutCell, atIndexPath: indexPath)
         //layoutCell.bounds = CGRectMake(0.0, 0.0, CGRectGetWidth(tableView.bounds), CGRectGetHeight(layoutCell.bounds))
+
+        configureCell(layoutCell, atIndexPath: indexPath)
         layoutCell.layoutIfNeeded()
         
         // Get the height for the cell. Add padding of 1 point for cell separator.
         let height = layoutCell.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height
         return height + 1
     }
-
-    // MARK: - Fetched results controller
-
-    var fetchedResultsController: NSFetchedResultsController {
-        if _fetchedResultsController != nil {
-            return _fetchedResultsController!
-        }
-        
-        let fetchRequest = NSFetchRequest()
-        // Edit the entity name as appropriate.
-        let entity = NSEntityDescription.entityForName("Event", inManagedObjectContext: self.managedObjectContext!)
-        fetchRequest.entity = entity
-        
-        // Set the batch size to a suitable number.
-        fetchRequest.fetchBatchSize = 20
-        
-        // Edit the sort key as appropriate.
-        let sortDescriptor = NSSortDescriptor(key: "timeStamp", ascending: false)
-        let sortDescriptors = [sortDescriptor]
-        
-        fetchRequest.sortDescriptors = [sortDescriptor]
-        
-        // Edit the section name key path and cache name if appropriate.
-        // nil for section name key path means "no sections".
-        let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext!, sectionNameKeyPath: nil, cacheName: "Master")
-        aFetchedResultsController.delegate = self
-        _fetchedResultsController = aFetchedResultsController
-        
-    	var error: NSError? = nil
-    	if !_fetchedResultsController!.performFetch(&error) {
-    	     // Replace this implementation with code to handle the error appropriately.
-    	     // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-             //println("Unresolved error \(error), \(error.userInfo)")
-    	     abort()
-    	}
-        
-        return _fetchedResultsController!
-    }    
-    var _fetchedResultsController: NSFetchedResultsController? = nil
-
-    func controllerWillChangeContent(controller: NSFetchedResultsController) {
-        self.tableView.beginUpdates()
-    }
-
-    func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
-        switch type {
-            case .Insert:
-                self.tableView.insertSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
-            case .Delete:
-                self.tableView.deleteSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
-            default:
-                return
-        }
-    }
-
-    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
-        switch type {
-            case .Insert:
-                tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
-            case .Delete:
-                tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
-            case .Update:
-                self.configureCell(tableView.cellForRowAtIndexPath(indexPath!)!, atIndexPath: indexPath!)
-            case .Move:
-                tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
-                tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
-            default:
-                return
-        }
-    }
-
-    func controllerDidChangeContent(controller: NSFetchedResultsController) {
-        self.tableView.endUpdates()
-    }
-
-    /*
-     // Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed.
-     
-     func controllerDidChangeContent(controller: NSFetchedResultsController) {
-         // In the simplest, most efficient, case, reload the table view.
-         self.tableView.reloadData()
-     }
-     */
 
 }
 
