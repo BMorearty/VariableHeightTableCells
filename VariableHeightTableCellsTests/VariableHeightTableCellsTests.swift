@@ -1,6 +1,6 @@
 //
-//  FooTests.swift
-//  FooTests
+//  VariableHeightTableCellsTests.swift
+//  VariableHeightTableCellsTests
 //
 //  Created by Brian on 11/11/14.
 //  Copyright (c) 2014 Brian Morearty. All rights reserved.
@@ -9,7 +9,7 @@
 import UIKit
 import XCTest
 
-class FooTests: XCTestCase {
+class VariableHeightTableCellsTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

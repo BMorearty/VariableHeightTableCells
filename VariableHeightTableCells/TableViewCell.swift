@@ -1,6 +1,6 @@
 //
 //  TableViewCell.swift
-//  Foo
+//  VariableHeightTableCells
 //
 //  Created by Brian on 11/11/14.
 //  Copyright (c) 2014 Brian Morearty. All rights reserved.

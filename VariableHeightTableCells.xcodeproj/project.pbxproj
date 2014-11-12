@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		D3B0E9AC1A13194000446527 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B0E9AB1A13194000446527 /* AppDelegate.swift */; };
-		D3B0E9AF1A13194000446527 /* Foo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3B0E9AD1A13194000446527 /* Foo.xcdatamodeld */; };
 		D3B0E9B11A13194000446527 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B0E9B01A13194000446527 /* MasterViewController.swift */; };
 		D3B0E9B31A13194000446527 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B0E9B21A13194000446527 /* DetailViewController.swift */; };
 		D3B0E9B61A13194000446527 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3B0E9B41A13194000446527 /* Main.storyboard */; };
 		D3B0E9B81A13194000446527 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3B0E9B71A13194000446527 /* Images.xcassets */; };
 		D3B0E9BB1A13194000446527 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B0E9B91A13194000446527 /* LaunchScreen.xib */; };
-		D3B0E9C71A13194000446527 /* FooTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B0E9C61A13194000446527 /* FooTests.swift */; };
+		D3B0E9C71A13194000446527 /* VariableHeightTableCellsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B0E9C61A13194000446527 /* VariableHeightTableCellsTests.swift */; };
 		D3B0E9D11A13199D00446527 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B0E9D01A13199D00446527 /* TableViewCell.swift */; };
+		D3F12AFC1A13D83F0090D72A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3F12AFB1A13D83F0090D72A /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,19 +29,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D3B0E9A61A13194000446527 /* Foo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3B0E9A61A13194000446527 /* VariableHeightTableCells.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VariableHeightTableCells.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B0E9AA1A13194000446527 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3B0E9AB1A13194000446527 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D3B0E9AE1A13194000446527 /* Foo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Foo.xcdatamodel; sourceTree = "<group>"; };
 		D3B0E9B01A13194000446527 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		D3B0E9B21A13194000446527 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D3B0E9B51A13194000446527 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D3B0E9B71A13194000446527 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D3B0E9BA1A13194000446527 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		D3B0E9C01A13194000446527 /* FooTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FooTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3B0E9C01A13194000446527 /* VariableHeightTableCellsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VariableHeightTableCellsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B0E9C51A13194000446527 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D3B0E9C61A13194000446527 /* FooTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooTests.swift; sourceTree = "<group>"; };
+		D3B0E9C61A13194000446527 /* VariableHeightTableCellsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableHeightTableCellsTests.swift; sourceTree = "<group>"; };
 		D3B0E9D01A13199D00446527 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		D3F12AFB1A13D83F0090D72A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +65,9 @@
 		D3B0E99D1A13194000446527 = {
 			isa = PBXGroup;
 			children = (
-				D3B0E9A81A13194000446527 /* Foo */,
-				D3B0E9C31A13194000446527 /* FooTests */,
+				D3F12AFB1A13D83F0090D72A /* Default-568h@2x.png */,
+				D3B0E9A81A13194000446527 /* VariableHeightTableCells */,
+				D3B0E9C31A13194000446527 /* VariableHeightTableCellsTests */,
 				D3B0E9A71A13194000446527 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,13 +75,13 @@
 		D3B0E9A71A13194000446527 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D3B0E9A61A13194000446527 /* Foo.app */,
-				D3B0E9C01A13194000446527 /* FooTests.xctest */,
+				D3B0E9A61A13194000446527 /* VariableHeightTableCells.app */,
+				D3B0E9C01A13194000446527 /* VariableHeightTableCellsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D3B0E9A81A13194000446527 /* Foo */ = {
+		D3B0E9A81A13194000446527 /* VariableHeightTableCells */ = {
 			isa = PBXGroup;
 			children = (
 				D3B0E9AB1A13194000446527 /* AppDelegate.swift */,
@@ -90,10 +91,9 @@
 				D3B0E9B41A13194000446527 /* Main.storyboard */,
 				D3B0E9B71A13194000446527 /* Images.xcassets */,
 				D3B0E9B91A13194000446527 /* LaunchScreen.xib */,
-				D3B0E9AD1A13194000446527 /* Foo.xcdatamodeld */,
 				D3B0E9A91A13194000446527 /* Supporting Files */,
 			);
-			path = Foo;
+			path = VariableHeightTableCells;
 			sourceTree = "<group>";
 		};
 		D3B0E9A91A13194000446527 /* Supporting Files */ = {
@@ -104,13 +104,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D3B0E9C31A13194000446527 /* FooTests */ = {
+		D3B0E9C31A13194000446527 /* VariableHeightTableCellsTests */ = {
 			isa = PBXGroup;
 			children = (
-				D3B0E9C61A13194000446527 /* FooTests.swift */,
+				D3B0E9C61A13194000446527 /* VariableHeightTableCellsTests.swift */,
 				D3B0E9C41A13194000446527 /* Supporting Files */,
 			);
-			path = FooTests;
+			path = VariableHeightTableCellsTests;
 			sourceTree = "<group>";
 		};
 		D3B0E9C41A13194000446527 /* Supporting Files */ = {
@@ -124,9 +124,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D3B0E9A51A13194000446527 /* Foo */ = {
+		D3B0E9A51A13194000446527 /* VariableHeightTableCells */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D3B0E9CA1A13194000446527 /* Build configuration list for PBXNativeTarget "Foo" */;
+			buildConfigurationList = D3B0E9CA1A13194000446527 /* Build configuration list for PBXNativeTarget "VariableHeightTableCells" */;
 			buildPhases = (
 				D3B0E9A21A13194000446527 /* Sources */,
 				D3B0E9A31A13194000446527 /* Frameworks */,
@@ -136,14 +136,14 @@
 			);
 			dependencies = (
 			);
-			name = Foo;
+			name = VariableHeightTableCells;
 			productName = Foo;
-			productReference = D3B0E9A61A13194000446527 /* Foo.app */;
+			productReference = D3B0E9A61A13194000446527 /* VariableHeightTableCells.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D3B0E9BF1A13194000446527 /* FooTests */ = {
+		D3B0E9BF1A13194000446527 /* VariableHeightTableCellsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D3B0E9CD1A13194000446527 /* Build configuration list for PBXNativeTarget "FooTests" */;
+			buildConfigurationList = D3B0E9CD1A13194000446527 /* Build configuration list for PBXNativeTarget "VariableHeightTableCellsTests" */;
 			buildPhases = (
 				D3B0E9BC1A13194000446527 /* Sources */,
 				D3B0E9BD1A13194000446527 /* Frameworks */,
@@ -154,9 +154,9 @@
 			dependencies = (
 				D3B0E9C21A13194000446527 /* PBXTargetDependency */,
 			);
-			name = FooTests;
+			name = VariableHeightTableCellsTests;
 			productName = FooTests;
-			productReference = D3B0E9C01A13194000446527 /* FooTests.xctest */;
+			productReference = D3B0E9C01A13194000446527 /* VariableHeightTableCellsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -177,7 +177,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D3B0E9A11A13194000446527 /* Build configuration list for PBXProject "Foo" */;
+			buildConfigurationList = D3B0E9A11A13194000446527 /* Build configuration list for PBXProject "VariableHeightTableCells" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -190,8 +190,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D3B0E9A51A13194000446527 /* Foo */,
-				D3B0E9BF1A13194000446527 /* FooTests */,
+				D3B0E9A51A13194000446527 /* VariableHeightTableCells */,
+				D3B0E9BF1A13194000446527 /* VariableHeightTableCellsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -202,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3B0E9B61A13194000446527 /* Main.storyboard in Resources */,
+				D3F12AFC1A13D83F0090D72A /* Default-568h@2x.png in Resources */,
 				D3B0E9BB1A13194000446527 /* LaunchScreen.xib in Resources */,
 				D3B0E9B81A13194000446527 /* Images.xcassets in Resources */,
 			);
@@ -222,7 +223,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3B0E9D11A13199D00446527 /* TableViewCell.swift in Sources */,
-				D3B0E9AF1A13194000446527 /* Foo.xcdatamodeld in Sources */,
 				D3B0E9AC1A13194000446527 /* AppDelegate.swift in Sources */,
 				D3B0E9B11A13194000446527 /* MasterViewController.swift in Sources */,
 				D3B0E9B31A13194000446527 /* DetailViewController.swift in Sources */,
@@ -233,7 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3B0E9C71A13194000446527 /* FooTests.swift in Sources */,
+				D3B0E9C71A13194000446527 /* VariableHeightTableCellsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,7 +242,7 @@
 /* Begin PBXTargetDependency section */
 		D3B0E9C21A13194000446527 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D3B0E9A51A13194000446527 /* Foo */;
+			target = D3B0E9A51A13194000446527 /* VariableHeightTableCells */;
 			targetProxy = D3B0E9C11A13194000446527 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -348,9 +348,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Foo/Info.plist;
+				INFOPLIST_FILE = VariableHeightTableCells/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = VariableHeightTableCells;
 			};
 			name = Debug;
 		};
@@ -358,9 +358,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Foo/Info.plist;
+				INFOPLIST_FILE = VariableHeightTableCells/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = VariableHeightTableCells;
 			};
 			name = Release;
 		};
@@ -376,10 +376,10 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = FooTests/Info.plist;
+				INFOPLIST_FILE = VariableHeightTableCellsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Foo.app/Foo";
+				PRODUCT_NAME = VariableHeightTableCellsTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VariableHeightTableCells.app/VariableHeightTableCells";
 			};
 			name = Debug;
 		};
@@ -391,17 +391,17 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = FooTests/Info.plist;
+				INFOPLIST_FILE = VariableHeightTableCellsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Foo.app/Foo";
+				PRODUCT_NAME = VariableHeightTableCellsTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VariableHeightTableCells.app/VariableHeightTableCells";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D3B0E9A11A13194000446527 /* Build configuration list for PBXProject "Foo" */ = {
+		D3B0E9A11A13194000446527 /* Build configuration list for PBXProject "VariableHeightTableCells" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D3B0E9C81A13194000446527 /* Debug */,
@@ -410,36 +410,25 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D3B0E9CA1A13194000446527 /* Build configuration list for PBXNativeTarget "Foo" */ = {
+		D3B0E9CA1A13194000446527 /* Build configuration list for PBXNativeTarget "VariableHeightTableCells" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D3B0E9CB1A13194000446527 /* Debug */,
 				D3B0E9CC1A13194000446527 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		D3B0E9CD1A13194000446527 /* Build configuration list for PBXNativeTarget "FooTests" */ = {
+		D3B0E9CD1A13194000446527 /* Build configuration list for PBXNativeTarget "VariableHeightTableCellsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D3B0E9CE1A13194000446527 /* Debug */,
 				D3B0E9CF1A13194000446527 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		D3B0E9AD1A13194000446527 /* Foo.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				D3B0E9AE1A13194000446527 /* Foo.xcdatamodel */,
-			);
-			currentVersion = D3B0E9AE1A13194000446527 /* Foo.xcdatamodel */;
-			path = Foo.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = D3B0E99E1A13194000446527 /* Project object */;
 }
