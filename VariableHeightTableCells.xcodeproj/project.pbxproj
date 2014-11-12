@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D38242981A13DEA50096C3C8 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D38242971A13DEA50096C3C8 /* README.md */; };
 		D3B0E9AC1A13194000446527 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B0E9AB1A13194000446527 /* AppDelegate.swift */; };
 		D3B0E9B11A13194000446527 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B0E9B01A13194000446527 /* MasterViewController.swift */; };
 		D3B0E9B31A13194000446527 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B0E9B21A13194000446527 /* DetailViewController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D38242971A13DEA50096C3C8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D3B0E9A61A13194000446527 /* VariableHeightTableCells.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VariableHeightTableCells.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B0E9AA1A13194000446527 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3B0E9AB1A13194000446527 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 		D3B0E99D1A13194000446527 = {
 			isa = PBXGroup;
 			children = (
+				D38242971A13DEA50096C3C8 /* README.md */,
 				D3F12AFB1A13D83F0090D72A /* Default-568h@2x.png */,
 				D3B0E9A81A13194000446527 /* VariableHeightTableCells */,
 				D3B0E9C31A13194000446527 /* VariableHeightTableCellsTests */,
@@ -224,6 +227,7 @@
 			files = (
 				D3B0E9D11A13199D00446527 /* TableViewCell.swift in Sources */,
 				D3B0E9AC1A13194000446527 /* AppDelegate.swift in Sources */,
+				D38242981A13DEA50096C3C8 /* README.md in Sources */,
 				D3B0E9B11A13194000446527 /* MasterViewController.swift in Sources */,
 				D3B0E9B31A13194000446527 /* DetailViewController.swift in Sources */,
 			);
