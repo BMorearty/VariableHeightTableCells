@@ -19,6 +19,10 @@ class MasterViewController: UITableViewController {
             "It's nine o'clock on a Saturday. The regular crowd shuffles in. There's an old man sitting next to me, making love to his tonic and gin. He says, Son can you play me a memory, I'm not really sure how it goes, But it's sad and it's sweet and I knew it complete when I wore a younger man's clothes." ],
         [ "Where, Oh Where Has My Little Dog Gone?",
             "Oh where, oh where has my little dog gone? Oh where, or where can he be?" ],
+        [ "Where, Oh Where Has My Little Dog Gone?",
+            "Oh where, oh where has my 🎃little dog gone? Oh where, or where can he be?" ],
+        [ "Where, Oh Where Has My Little Dog Gone?",
+            "Oh where, oh where has my latté doggie gone? Oh where, or where can he be?" ],
         [ "You Can't Always Get What You Want",
             "I saw her today at the reception, a glass of wine in her hand." ]
     ]
@@ -70,8 +74,8 @@ class MasterViewController: UITableViewController {
     
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
         let tableViewCell = cell as TableViewCell
-        tableViewCell.topLabel.text = songs[indexPath.row % 3][0]
-        tableViewCell.bottomLabel.text = songs[indexPath.row % 3][1]
+        tableViewCell.topLabel.text = songs[indexPath.row % songs.count][0]
+        tableViewCell.bottomLabel.text = songs[indexPath.row % songs.count][1]
         layoutCell.topLabel.preferredMaxLayoutWidth = self.tableView.bounds.size.width;
         layoutCell.bottomLabel.preferredMaxLayoutWidth = self.tableView.bounds.size.width;
     }
