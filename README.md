@@ -14,7 +14,7 @@ See tableView:heightForRowAtIndexPath: in MasterViewController.swift for details
 
 I'm ready to give up and used fixed-height cells.
 
-# UPDATE: Problem solved.
+# UPDATE 1: Problem partly solved.
 
 [My brother](https://github.com/mmorearty) figured out that I wasn't taking
 into account the width of the disclosure arrows on the table.
@@ -28,3 +28,7 @@ or remove the arrows from the UI, it works. I chose the latter.
 ## After
 
 ![](Without-disclosure-arrows.png)
+
+# UPDATE 2: Accented characters and emojis still mess up the height calculation. 
+
+![](With-accents-and-emojis.png)
